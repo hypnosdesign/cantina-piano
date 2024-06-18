@@ -1,0 +1,35 @@
+---
+//import "bootstrap/scss/bootstrap.scss";
+import "../sass/index.scss";
+import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js?url";
+import Footer from "../components/Footer.astro";
+import NavBar from "../components/NavBar.astro";
+import {SITE_TITLE, SITE_DESCRIPTION} from "../constants.ts";
+
+
+const {title} = Astro.props;
+---
+
+<html lang="it">
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={SITE_DESCRIPTION} />
+        <title>{SITE_TITLE} | {title} | {SITE_DESCRIPTION} </title>
+    </head>
+    <body>
+        <NavBar />
+
+        <main class="container">
+            <slot />
+        </main>
+
+        <Footer />
+
+    </body>
+
+    <script src={bootstrap}></script>
+</html>

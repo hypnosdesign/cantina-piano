@@ -1,0 +1,16 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from "astro:assets";
+import bottle_nero from "../images/vino_nero_bottle_nobg.png";
+const titlePage = "La Nostra Vigna";
+---
+<MainLayout title={titlePage}>
+    <h1>{titlePage}</h1>
+    <Image
+            src={bottle_nero}
+            alt="Bottiglia di vino nero"
+            class="w-25 img-fluid"
+            decoding="async"
+            loading="lazy"
+    />
+</MainLayout>
