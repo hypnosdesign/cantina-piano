@@ -7,15 +7,15 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [purgecss({
+ /* integrations: [purgecss({
     variables: true,
     keyframes: false,
     safelist: {
-      greedy: [/*astro*/]
+      greedy: [/!*astro*!/]
     },
-    content: [process.cwd() + '/src/**/*.{astro}' // Watching astro and vue sources (for SSR, read the note below)
+    content: [process.cwd() + '/src/!**!/!*.{astro}' // Watching astro and vue sources (for SSR, read the note below)
     ]
-  })],
+  })],*/
   output: "server",
   adapter: netlify()
 });
