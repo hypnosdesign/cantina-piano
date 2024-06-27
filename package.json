@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^5.3.3",
     "@fontsource/cookie": "^5.0.19",
     "@fontsource/source-serif-pro": "^5.0.8",
     "@popperjs/core": "^2.11.8",
