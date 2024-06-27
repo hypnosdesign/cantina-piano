@@ -1,0 +1,148 @@
+$body-color:                rgb(36 36 36 / 1);
+$body-bg:                   rgb(240 240 240 /1);
+
+
+
+$font-family-serif: 'Source Serif pro', serif;
+$font-family-monospace: 'Courier New, monospace';
+$font-family-cursive: 'Cookie', cursive;
+
+// Override the base font-family
+$font-family-base: $font-family-serif;
+$headings-font-family: $font-family-cursive;
+
+
+
+// $headings-line-height: 4;
+
+$font-size-base:              1rem;
+
+$line-height-base:            1.5;
+$line-height-sm:              1.25;
+$line-height-lg:              2;
+
+$h1-font-size:                $font-size-base * 6;
+$h2-font-size:                $font-size-base * 5;
+$h3-font-size:                $font-size-base * 4;
+$h4-font-size:                $font-size-base * 3;
+$h5-font-size:                $font-size-base * 2;
+$h6-font-size:                $font-size-base;
+
+$enable-negative-margins: true;
+$enable-shadows: true;
+
+:root {
+  --wineblack: #8f1a37;
+}
+// import boostrap functions and avriables
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// extend with new custom theme colors palette
+$wine-colors: (
+  "wineblack": #8f1a37,
+  "wineorange": rgb(235 170 0 / 1),
+  "winegreen": #28a745,
+  "winegold": #B79B54,
+  "winebrown": #301904,
+  "winedark": rgb(36 36 36 / 1),
+  "winelight": rgb(240 240 240 /1),
+);
+
+// extend more sizes by adding entries to the $spacers map variable boostrap
+$spacers-extends: (
+  6: 3.5rem,
+  7: 4rem,
+  8: 4.5rem,
+  9: 5rem,
+  10: 5.5rem,
+  11: 6rem,
+  12: 6.5rem,
+  13: 7rem,
+  14: 7.5rem,
+  15: 8rem,
+  16: 8.5rem,
+  17: 9rem,
+  18: 9.5rem,
+  19: 10rem,
+  20: 10.5rem
+);
+
+$theme-colors: map-merge($theme-colors, $wine-colors);
+$spacers: map-merge($spacers, $spacers-extends);
+
+
+
+@import "bootstrap/scss/bootstrap";
+// import boostrap icons
+@import "bootstrap-icons/font/bootstrap-icons.min.css";
+
+
+
+@mixin full-width($px: 10) {
+  margin-inline: -200%;
+  padding-inline: calc(#{$px}px + 200%);
+}
+
+body {
+  overflow-x: hidden;
+  width: 100lvw;
+}
+
+.text-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  letter-spacing: -0.033em;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  &__container {
+    max-width: 680px;
+    margin: 1em auto;
+  }
+}
+
+.hero {
+  // Positioning
+
+  // Box model
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50svh;
+  //@include full-width(10);
+
+
+  // Typography
+  text-align: center;
+  //word-break: keep-all;
+
+  // Visual
+  background: var(--secondary);
+  background: linear-gradient(200deg, rgba(235,170,36,1) 10%, rgba(235,170,36,1) 20%, rgba(235,170,36,1) 50%, rgba(143,26,55,1) 100%);
+  color: var(--white);
+
+  // Misc
+  p {
+    max-width: 680px;
+    width: 100%;
+  }
+}
+
+.dropcap {
+  float: left;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  font-family: $font-family-cursive;
+  font-size: 6rem;
+  line-height: 4rem;
+  color: var(--wineblack);
+  text-transform: uppercase;
+}
+
+a {
+  cursor: pointer;
+}
+
+
+

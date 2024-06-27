@@ -1,0 +1,23 @@
+---
+import {formatDate} from "../utils";
+const {post} = Astro.props;
+
+---
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{post.data.title}</h5>
+        <p class="card-text">
+            {formatDate(post.data.pubDate)}
+        </p>
+        <a href={"/blog/" + post.slug} class="btn btn-primary">Go somewhere</a>
+        <p>
+            {post.data.tags.map( tag => (
+                            <span class="badge bg-secondary">
+                            {tag}
+                        </span>
+                )
+            )}
+        </p>
+    </div>
+</div>

@@ -1,18 +1,89 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from "astro:assets";
+import ItaliaVect from "../components/ItaliaVect.astro";
+import BicchiereVino from "../images/bevilo-piano.png";
 import bottle_nero from "../images/vino_nero_bottle_nobg.png";
 const titlePage = "HomePage";
+
 ---
 <MainLayout title={titlePage}>
-	<h1>{titlePage}</h1>
-	<Image
-		src={bottle_nero}
-		alt="Bottiglia di vino nero"
-		class="w-25 img-fluid"
-		decoding="async"
-		loading="lazy"
-	/>
+  <section class="hero border-bottom border-wineblack border-5 py-20 bg-wineorange gradient text-white">
+    <div class="container">
+      <p class="h4 mx-auto">La Cantina Piano produce due vini distinti, ognuno con una personalità unica e affascinante.</p>
+    </div>
+  </section>
+
+
+<section>
+
+    <div class="container my-15 my-lg-20">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-3 ">
+          <h2 class="h4">Filosofia</h2>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="text-paragraph">
+            Fin dai primi anni, la nostra missione è stata chiara: creare vini che raccontano una storia, che esprimono il carattere autentico del territorio e che invitano a vivere la vita in modo rilassato e conviviale. Il nome stesso della nostra cantina, "Piano", riflette questa filosofia. Vogliamo che i nostri vini siano degustati con calma, in buona compagnia, assaporando ogni momento.
+          </p>
+          <a class="btn" href="la-cantina">scopri la cantina</a>
+        </div>
+        <div class="col-12 col-md-3 text-center">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#8F1A37"/>
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#B79B54"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <picture class="w-25">
+          <ItaliaVect/>
+        </picture>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row my-5 justify-content-center align-items-center">
+        <div class="col-12 col-md-3 ">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#8F1A37"/>
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#B79B54"/></svg>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="text-paragraph">
+            Immersa nella splendida cornice della Sardegna, la Cantina Piano nasce dalla passione per la viticoltura e dall'amore per la nostra terra. Fondata da una famiglia sarda con una lunga tradizione vinicola, la cantina rappresenta un connubio perfetto tra innovazione e rispetto per le antiche tradizioni.          </p>
+          <a class="btn btn-wine rounded" href="la-vigna">scopri la vigna</a>
+        </div>
+        <div class="col-12 col-md-3 text-center">
+          <h2 class="h4">Territorio</h2>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="row p-4 pb-0 pe-lg-0 align-items-center mt-n5">
+    <div class="col-md-5 p-3 p-md-5 text-center">
+      <h1>Bevilo <span>piano</span></h1>
+    </div>
+    <div class="col-lg-6 offset-lg-1 p-0 overflow-hidden">
+      <Image
+        src={BicchiereVino}
+        alt="Bicchiere di vino"
+        class="w-100 img-fluid"
+        decoding="async"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
 </MainLayout>
 
 

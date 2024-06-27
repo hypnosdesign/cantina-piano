@@ -1,18 +1,10 @@
-# Astro Starter Kit: Minimal
+# Sito Web Cantina Piano
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Questo progetto è un sito web statico realizzato con Astro.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 🚀 Struttura del Progetto
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+All'interno del progetto sono presenti le seguenti cartelle e file:
 
 ```text
 /
@@ -23,25 +15,39 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro cerca i file `.astro` o `.md` nella cartella `src/pages/`. Ogni pagina è esposta come rotta in base al nome del file.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Nella cartella `src/components/`,
+ è vengono alloggiati i componenti di Astro/React/Vue/Svelte/Preact.
+Qualsiasi risorsa statica, come le immagini,
+può essere collocata nella cartella `public/`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🧞 Commandi
 
-## 🧞 Commands
+Tutti i comandi vengono eseguiti dalla radice del progetto, da un terminale:
 
-All commands are run from the root of the project, from a terminal:
+| Commando                  | Evento                                                      |
+|:--------------------------|:------------------------------------------------------------|
+| `npm install`             | Installa le dipendenze                                      |
+| `npm run dev`             | Avvia un server locale su `localhost:4321`                  |
+| `npm run build`           | Crea lo stato di produzione in `./dist/`                    |
+| `npm run preview`         | Anteprima della build in locale, prima di distribuirla      |
+| `npm run astro ...`       | Per Eseguire i comandi CLI come `astro add`, `astro check`. |
+| `npm run astro -- --help` | Aiuto per l'utilizzo della CLI di Astro                     |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 👀 pacchetti aggiuntivi
 
-## 👀 Want to learn more?
+- installazione di Boostrap
+```sh
+  npm install bootstrap
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- installazione di fontsource e del font Source Serif Pro
+```sh
+  npm install @fontsource/source-serif-pro
+```
+https://docs.astro-breadcrumbs.kasimir.dev/start-here/getting-started/
+
+```
+npm install astro-breadcrumbs
+```

@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "cantina-piano",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,10 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/cookie": "^5.0.19",
+    "@fontsource/source-serif-pro": "^5.0.8",
     "@popperjs/core": "^2.11.8",
     "astro": "^4.10.3",
+    "astro-breadcrumbs": "^2.3.1",
     "astro-purgecss": "^4.1.1",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3"
   },
   "devDependencies": {
     "@mojojoejo/vite-plugin-purgecss": "^1.1.0",

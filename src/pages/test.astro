@@ -1,0 +1,33 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from "astro:assets";
+import bottle_nero from "../images/vino_nero_bottle_nobg.png";
+const titlePage = "HomePage";
+import imageSlider from "../components/ImageSlider.astro";
+import ImageSlider from "../components/ImageSlider.astro";
+---
+<MainLayout title={titlePage}>
+
+  <h1>{titlePage}</h1>
+  <h2>ciao</h2>
+  <h3>sono acca tre</h3>
+  <h4>sono acca quattro</h4>
+  <h5>sono acca cinque</h5>
+  <h6>sono acca sei</h6>
+  <ImageSlider />
+  <p>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam delectus deserunt est facere inventore minus quae, quisquam repudiandae sequi ut! Atque eos excepturi fuga illum omnis perferendis reiciendis sint totam!</span><span>Ab accusantium aut consequatur distinctio eaque eius ex exercitationem explicabo facere fugit maiores odio perspiciatis, possimus, quaerat quam quas quis ratione sapiente similique sit tempora tenetur totam vitae. Ea, unde!</span><span>Asperiores at, blanditiis culpa deserunt ea eaque excepturi impedit ipsam laborum libero molestiae neque praesentium quaerat quam quidem repellendus sed. Hic illo necessitatibus nisi nobis qui repudiandae veniam voluptate voluptatibus?</span><span>Aperiam beatae cum delectus deserunt distinctio dolore dolores eaque eius harum, ipsam labore, magnam minus nisi nobis odio optio perferendis quam sapiente sit tempora totam ut, voluptatem! Accusamus, doloribus, maxime.</span><span>Ad amet doloribus dolorum, impedit iure nemo quos repellendus veniam voluptatem voluptatum? A ab animi atque aut dolor est fuga illo, nemo non repellat sint sunt, suscipit temporibus ullam veritatis.</span><span>Adipisci consectetur, dicta earum exercitationem laboriosam nisi officia perferendis provident? Ad doloremque numquam veritatis? Accusantium architecto deserunt dolores, explicabo facilis fugit impedit libero mollitia odio officiis possimus, quidem repellat unde.</span>
+  </p>
+
+  <p class="paragraph paragraph__container">
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam delectus deserunt est facere inventore minus quae, quisquam repudiandae sequi ut! Atque eos excepturi fuga illum omnis perferendis reiciendis sint totam!</span><span>Ab accusantium aut consequatur distinctio eaque eius ex exercitationem explicabo facere fugit maiores odio perspiciatis, possimus, quaerat quam quas quis ratione sapiente similique sit tempora tenetur totam vitae. Ea, unde!</span><span>Asperiores at, blanditiis culpa deserunt ea eaque excepturi impedit ipsam laborum libero molestiae neque praesentium quaerat quam quidem repellendus sed. Hic illo necessitatibus nisi nobis qui repudiandae veniam voluptate voluptatibus?</span><span>Aperiam beatae cum delectus deserunt distinctio dolore dolores eaque eius harum, ipsam labore, magnam minus nisi nobis odio optio perferendis quam sapiente sit tempora totam ut, voluptatem! Accusamus, doloribus, maxime.</span><span>Ad amet doloribus dolorum, impedit iure nemo quos repellendus veniam voluptatem voluptatum? A ab animi atque aut dolor est fuga illo, nemo non repellat sint sunt, suscipit temporibus ullam veritatis.</span><span>Adipisci consectetur, dicta earum exercitationem laboriosam nisi officia perferendis provident? Ad doloremque numquam veritatis? Accusantium architecto deserunt dolores, explicabo facilis fugit impedit libero mollitia odio officiis possimus, quidem repellat unde.</span>
+  </p>
+  <Image
+    src={bottle_nero}
+    alt="Bottiglia di vino nero"
+    class="w-25 img-fluid"
+    decoding="async"
+    loading="lazy"
+  />
+
+</MainLayout>

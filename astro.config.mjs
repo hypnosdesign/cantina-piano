@@ -15,6 +15,8 @@ export default defineConfig({
       content: [
         process.cwd() + '/src/**/*.{astro}' // Watching astro and vue sources (for SSR, read the note below)
       ],
+
     })
-  ]
+  ],
+  output: "server",
 });
