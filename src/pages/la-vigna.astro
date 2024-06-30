@@ -1,6 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { Image, getImage } from "astro:assets";
+import {Image, getImage} from "astro:assets";
 import HeaderVigna from '../images/vigna/header-vigna.jpg';
 import LandVigna from '../images/vigna/landscape-vigna.jpg';
 import UvaBianca from '../images/vigna/uva-bianca-vigna.jpg';
@@ -17,14 +17,17 @@ const titlePage = "La Nostra Vigna";
 ---
 <MainLayout title={titlePage}>
 
-  <header class="header-vigna text-white" style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${optimizedBackground.src});`}>
+  <header class="header-vigna text-white"
+          style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${optimizedBackground.src});`}>
     <div class="container">
       <div class="col-10 mx-auto ">
         <div class="px-1 p-md-4 py-md-10">
           <p class="h1 mb-8">
-              <span class="text-wineorange">la Magia</span> della <span class="text-wineorange">Nostra Vigna</span>,
+            <span class="text-wineorange">la Magia</span> della <span
+            class="text-wineorange">Nostra Vigna</span>,
           </p>
-          <p class="display-6">dove ogni grappolo d'uva è il frutto di un amore profondo per la terra e per l'arte del vino.</p>
+          <p class="display-6">dove ogni grappolo d'uva è il frutto di un amore
+            profondo per la terra e per l'arte del vino.</p>
         </div>
       </div>
     </div>
@@ -35,12 +38,8 @@ const titlePage = "La Nostra Vigna";
          style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${OptBereUvaBianca.src});`}>
     </div>
     <div class="col-lg-6 offset-n1 p-3 p-lg-5 pt-lg-3">
-      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva Bianca</h1>
-      <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-      </div>
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Vivi il Bianco</h1>
+      <p class="lead">Un vino fresco e aromatico, perfetto per vivere appieno i momenti di convivialità e allegria. Le sue note fruttate e floreali esaltano ogni sorso, rendendolo ideale per celebrare la vita da soli o in compagnia.</p>
     </div>
   </div>
 
@@ -49,24 +48,22 @@ const titlePage = "La Nostra Vigna";
          style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${OptBereUvaNera.src});`}>
     </div>
     <div class="col-lg-5 offset-n1 p-3 p-lg-5 pt-lg-3">
-      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva Nera</h1>
-      <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-      </div>
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Rilassati insieme al Nero</h1>
+      <p class="lead">Un vino robusto e complesso, pensato per rilassarsi e riflettere nelle serate tranquille. I suoi sentori di frutti di bosco e spezie creano un'atmosfera avvolgente, invitando a gustarlo lentamente, sorso dopo sorso.</p>
     </div>
   </div>
 
   <section>
-    <Image src={LandVigna} decoding="async" loading="lazy" alt="Vigna" class="img-fluid w-100" />
+    <Image src={LandVigna} decoding="async" loading="lazy" alt="Vigna"
+           class="img-fluid w-100"/>
   </section>
 
   <div class="row align-items-center">
 
     <div class="col-lg-5 offset-lg-1 p-3 p-lg-5 pt-lg-3">
-      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva Bianca</h1>
-      <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva
+        Bianca</h1>
+      <p class="lead">Distesa sulle dolci colline sarde, questa vigna cattura l'essenza del sole e del mare, donando uve bianche aromatiche e fresche. Ogni grappolo, curato con amore e dedizione, riflette la purezza della terra e l'anima vibrante della Sardegna.</p>
     </div>
     <div class="chevron-r col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"
          style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${OptUvaBianca.src});`}>
@@ -76,8 +73,9 @@ const titlePage = "La Nostra Vigna";
   <div class="row align-items-center">
 
     <div class="col-lg-5 offset-lg-1 p-3 p-lg-5 pt-lg-3">
-      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva Nera</h1>
-      <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva
+        Nera</h1>
+      <p class="lead">Situata su terreni minerali e ben drenati, questa vigna produce uve nere ricche e complesse, imbevute del calore mediterraneo. I filari ordinati, accarezzati dal vento, danno vita a grappoli intensi che raccontano storie di tradizione e passione enologica.</p>
     </div>
     <div class="chevron-l col-lg-4 p-0 overflow-hidden shadow-lg"
          style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${OptUvaNera.src});`}>
