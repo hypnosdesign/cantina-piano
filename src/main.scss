@@ -191,12 +191,22 @@ a {
   z-index: -1;
 }
 
-.header-cantina {
+.header-cantina,
+.header-vigna,
+.header-post {
   padding: 1rem 0;
   background-position: center left;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+  text-shadow: 2px 2px black;
+  z-index: -1;
+}
+
+.header-post a {
+  top:3rem;
+  left: 2rem;
+  z-index: 99999;
 }
 
 .imbottigliamento,
@@ -209,8 +219,25 @@ a {
 
 .skew-background.stoccaggio {
   clip-path: polygon(50% 30%, 100% 50%, 100% 100%, 0 100%, 0% 50%);
-
 }
 
+.chevron-l,
+.chevron-r {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.chevron-l {
+  height: 100%;
+  min-height: 500px;
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+.chevron-r {
+  height: 100%;
+  min-height: 500px;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
 
 

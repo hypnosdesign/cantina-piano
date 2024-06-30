@@ -1,23 +1,31 @@
 ---
-import {formatDate} from "../utils";
-const {post} = Astro.props;
+import { formatDate } from "../utils";
+import type { CollectionEntry } from "astro:content";
 
+const { article } = Astro.props;
+
+interface Props {
+  article: CollectionEntry<'blog'>;
+}
 ---
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">{post.data.title}</h5>
-        <p class="card-text">
-            {formatDate(post.data.pubDate)}
-        </p>
-        <a href={"/blog/" + post.slug} class="btn btn-primary">Go somewhere</a>
-        <p>
-            {post.data.tags.map( tag => (
-                            <span class="badge bg-secondary">
-                            {tag}
-                        </span>
-                )
-            )}
-        </p>
+<div class="card">
+  <div class="bg-white rounded-2 overflow-hidden shadow-lg">
+    <a href={'/blog/' + article.slug}>
+      <img
+        src={'/imgs/forblog/' + article.data.image}
+        alt="Immagine articolo blog"
+        class="img-fluid"
+      />
+    </a>
+    <div class="p-5">
+      <h2 class="fs-5 mb-2">
+        <a href={'/blog/' + article.slug}> {article.data.title} </a>
+      </h2>
+      <p class="mb-1">{formatDate(article.data.pubDate)}</p>
     </div>
+  </div>
 </div>
+
+
+
+

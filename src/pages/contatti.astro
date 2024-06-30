@@ -1,7 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
 import { Image } from "astro:assets";
-import bottle_nero from "../images/vino_nero_bottle_nobg.png";
+
 const titlePage = "Contatti";
 
 ---
@@ -79,8 +80,8 @@ const titlePage = "Contatti";
               <div class="form-check">
                 <input class="form-check-input border-dark" type="checkbox" id="gridCheck">
                 <label class="form-check-label text-muted small" for="gridCheck">
-                  Accetto espressamente i <a href="" class="underline">termini
-                  e le condizioni</a> e riconosco che le mie informazioni saranno utilizzate in conformità con l'Informativa sulla <a href="privacy">privacy</a>.
+                  Accetto espressamente i termini
+                  e le condizioni e riconosco che le mie informazioni saranno utilizzate in conformità con l'Informativa sulla <span data-bs-toggle="modal" data-bs-target="#staticBackdrop">privacy</span>.
                 </label>
               </div>
             </div>
@@ -95,3 +96,92 @@ const titlePage = "Contatti";
 
 
 </MainLayout>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop"  data-bs-keyboard="true" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content  p-8">
+      <div class="modal-header">
+        <div>
+          <h1>Politica sulla Privacy</h1>
+          <p>Ultimo aggiornamento: Giugno 2024</p>
+        </div>
+        <button type="button" class="btn-close me-4 fs-5 text-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-lg-8">
+              <h4 class="d-flex align-items-center line-height-normal mb-4">
+                <i class="bi bi-arrow-right p-2 mt-2 fs-5 text-wineblack"></i>
+                Chi siamo
+              </h4>
+              <p>Il nostro indirizzo web è https://acapoterra.it</p>
+              <hr class="my-5">
+              <h4 class="d-flex align-items-center line-height-normal mb-4">
+                <i class="bi bi-arrow-right p-2 mt-2 fs-5 text-wineblack"></i>
+                Quali dati personali raccogliamo e perché li raccogliamo
+              </h4>
+              <h5>Commenti</h5>
+              <p>Quando i visitatori lasciano commenti sul sito, raccogliamo i dati mostrati nel modulo dei commenti, oltre all'indirizzo IP del visitatore e alla stringa dell'agente utente del browser per aiutare il rilevamento dello spam.</p>
+              <h5>Cookie</h5>
+              <p>Un cookie è un file contenente un identificatore (una stringa di lettere e numeri) che viene inviato da un server web a un browser web e viene memorizzato dal browser. L'identificatore viene poi inviato nuovamente al server ogni volta che il browser richiede una pagina dal server. Il nostro sito web utilizza i cookie. Utilizzando il nostro sito web e accettando questa politica, acconsenti al nostro utilizzo dei cookie in conformità con i termini di questa politica.</p>
+              <p>Utilizziamo cookie di sessione per personalizzare il sito web per ciascun utente.</p>
+              <p>Utilizziamo Google Analytics per analizzare l'uso del nostro sito web. Il nostro fornitore di servizi di analisi genera informazioni statistiche e altre informazioni sull'uso del sito web mediante cookie. La politica sulla privacy del nostro fornitore di servizi di analisi è disponibile all'indirizzo: http://www.google.com/policies/privacy/.</p>
+              <p>Eliminare i cookie potrebbe avere un impatto negativo sull'usabilità del sito. Se blocchi i cookie, non sarai in grado di utilizzare tutte le funzionalità del nostro sito web.</p>
+              <h5>Contenuti incorporati da altri siti web</h5>
+              <p>Le pagine su questo sito possono includere contenuti incorporati (ad esempio frammenti da JS Fiddle, commenti Disqus, ecc.). I contenuti incorporati da altri siti web si comportano esattamente come se il visitatore avesse visitato l'altro sito web.</p>
+              <p>Questi siti web possono raccogliere dati su di te, utilizzare cookie, incorporare ulteriori tracciamenti di terze parti e monitorare la tua interazione con quei contenuti incorporati, incluso il tracciamento della tua interazione con i contenuti incorporati se hai un account e sei loggato a quel sito web.</p>
+              <hr class="my-5">
+              <h4 class="d-flex align-items-center line-height-normal mb-4">
+                <i class="bi bi-arrow-right p-2 mt-2 fs-5 text-wineblack"></i>
+                Con chi condividiamo i tuoi dati
+              </h4>
+              <p>A volte, possiamo condividere i dati raccolti su questo sito web con partner pubblicitari di terze parti come Google Ads o Facebook per reindirizzare e indirizzare potenziali clienti.</p>
+              <hr class="my-5">
+              <h4 class="d-flex align-items-center line-height-normal mb-4">
+                <i class="bi bi-arrow-right p-2 mt-2 fs-5 text-wineblack"></i>
+                Raccogliamo informazioni su di te durante la navigazione sul nostro sito.
+              </h4>
+              <h5>Durante la tua visita al nostro sito, terremo traccia di:</h5>
+              <p>Prodotti e pagine che hai visualizzato: utilizzeremo queste informazioni per, ad esempio, mostrarti i prodotti che hai recentemente visualizzato.</p>
+              <p>Utilizzeremo anche i cookie mentre navighi nel nostro sito.</p>
+              <p>Quando acquisti da noi, ti chiederemo di fornire informazioni tra cui nome, indirizzo email. Utilizzeremo queste informazioni per scopi come:</p>
+              <ul>
+                <li>Rispondere alle tue richieste, incluso il supporto clienti</li>
+                <li>Rispettare eventuali obblighi legali che abbiamo</li>
+                <li>Migliorare le nostre offerte</li>
+              </ul>
+              <p>Generalmente conserviamo le informazioni su di te per tutto il tempo necessario agli scopi per i quali le raccogliamo e le utilizziamo, e non siamo legalmente obbligati a continuare a conservarle. Ciò include il tuo nome, indirizzo email e qualsiasi altra informazione fornita.</p>
+              <p>Conserveremo anche i commenti o le recensioni, se scegli di lasciarli.</p>
+              <hr class="my-5">
+              <h4 class="d-flex align-items-center line-height-normal mb-4">
+                <i class="bi bi-arrow-right p-2 mt-2 fs-5 text-wineblack"></i>
+                Chi nel nostro team ha accesso
+              </h4>
+              <p>I membri del nostro team di sviluppo web hanno accesso alle informazioni che ci fornisci.</p>
+              <hr class="my-5">
+
+              <h4 class="d-flex align-items-center mb-4">
+                <i class="bi bi-arrow-right p-2 mt-2 fs-5 text-wineblack"></i>
+                Quali diritti hai sui tuoi dati
+              </h4>
+              <p>Se hai un account su questo sito o hai lasciato commenti, puoi richiedere di ricevere un riepilogo dei dati personali che abbiamo su di te, inclusi i dati che ci hai fornito. Puoi anche richiedere che cancelliamo tutti i dati personali che abbiamo su di te. Questo non include i dati che siamo obbligati a mantenere per scopi amministrativi, legali o di sicurezza.</p>
+              <hr class="my-5">
+              <h4 class="d-flex align-items-center mb-4">
+                <i class="bi bi-arrow-right p-2 mt-2 fs-5 text-wineblack"></i>
+                Dove inviamo i tuoi dati
+              </h4>
+              <p>I dati che fornisci durante il checkout sono condivisi con i processori di pagamento, Stripe e PayPal. I dati di utilizzo sono condivisi con Google Analytics e Facebook Pixel, che utilizziamo per migliorare l'esperienza del nostro sito web e dei prodotti.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Accetto</button>
+      </div>
+    </div>
+  </div>
+</div>
+

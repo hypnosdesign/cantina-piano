@@ -1,0 +1,58 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getEntry } from 'astro:content';
+import { formatDate } from "../../utils";
+
+const { slug } = Astro.params;
+
+if(slug === undefined) {
+  throw new Error('Slug is required');
+}
+
+const entry = await getEntry('blog', slug);
+
+if(entry === undefined) {
+  return Astro.redirect('/404');
+}
+
+const { Content } = await entry.render();
+
+---
+
+<MainLayout>
+  <div class="container" >
+    <div class="row header-post py-16 text-center position-relative" style={`background-image: url(/imgs/forblog/${entry.data.image});`}>
+      <div class="">
+        <h1 class="my-4 text-white"> {entry.data.title}</h1>
+        <a href="/blog" class="d-block position-absolute link-secondary fs-6">
+          <i class="bi bi-arrow-left"></i>
+          Torna agli articoli</a>
+      </div>
+
+    </div>
+
+    <div class="row mt-n7">
+      <div class="col-11 mx-auto col-lg-7 bg-white px-8 py-4">
+        <article>
+          <hr>
+          <h3 class="fs-5">Written by {entry.data.author} on {formatDate(entry.data.pubDate)}</h3>
+          <hr class="mb-5">
+          <Content />
+        </article>
+      </div>
+    </div>
+
+  </div>
+
+</MainLayout>
+
+<style is:global>
+  p {
+    margin: 20px 0;
+  }
+
+  h2 {
+    margin: 20px 0;
+    font-size: 1.8rem;
+  }
+</style>

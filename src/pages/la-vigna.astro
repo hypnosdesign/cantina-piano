@@ -1,16 +1,88 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { Image } from "astro:assets";
-import bottle_nero from "../images/vino_nero_bottle_nobg.png";
+import { Image, getImage } from "astro:assets";
+import HeaderVigna from '../images/vigna/header-vigna.jpg';
+import LandVigna from '../images/vigna/landscape-vigna.jpg';
+import UvaBianca from '../images/vigna/uva-bianca-vigna.jpg';
+import UvaNera from '../images/vigna/uva-nera-vigna.jpg';
+import BereNero from '../images/vigna/mora-book-nero.jpg';
+import BereBianco from '../images/vigna/bionda-calm-bianco.jpg';
+const optimizedBackground = await getImage({src: HeaderVigna, format: 'webp'});
+const OptLandVigna = await getImage({src: LandVigna, format: 'webp'});
+const OptUvaBianca = await getImage({src: UvaBianca, format: 'webp'});
+const OptUvaNera = await getImage({src: UvaNera, format: 'webp'});
+const OptBereUvaNera = await getImage({src: BereNero, format: 'webp'});
+const OptBereUvaBianca = await getImage({src: BereBianco, format: 'webp'});
 const titlePage = "La Nostra Vigna";
 ---
 <MainLayout title={titlePage}>
-    <h1>{titlePage}</h1>
-    <Image
-            src={bottle_nero}
-            alt="Bottiglia di vino nero"
-            class="w-25 img-fluid"
-            decoding="async"
-            loading="lazy"
-    />
+
+  <header class="header-vigna text-white" style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${optimizedBackground.src});`}>
+    <div class="container">
+      <div class="col-10 mx-auto ">
+        <div class="px-1 p-md-4 py-md-10">
+          <p class="h1 mb-8">
+              <span class="text-wineorange">la Magia</span> della <span class="text-wineorange">Nostra Vigna</span>,
+          </p>
+          <p class="display-6">dove ogni grappolo d'uva è il frutto di un amore profondo per la terra e per l'arte del vino.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="row align-items-center">
+    <div class="chevron-l col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"
+         style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${OptBereUvaBianca.src});`}>
+    </div>
+    <div class="col-lg-6 offset-n1 p-3 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva Bianca</h1>
+      <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-center">
+    <div class="chevron-r col-lg-4 p-0 overflow-hidden shadow-lg offset-lg-2"
+         style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${OptBereUvaNera.src});`}>
+    </div>
+    <div class="col-lg-5 offset-n1 p-3 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva Nera</h1>
+      <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <Image src={LandVigna} decoding="async" loading="lazy" alt="Vigna" class="img-fluid w-100" />
+  </section>
+
+  <div class="row align-items-center">
+
+    <div class="col-lg-5 offset-lg-1 p-3 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva Bianca</h1>
+      <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+    </div>
+    <div class="chevron-r col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"
+         style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${OptUvaBianca.src});`}>
+    </div>
+  </div>
+
+  <div class="row align-items-center">
+
+    <div class="col-lg-5 offset-lg-1 p-3 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">la nostra Uva Nera</h1>
+      <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+    </div>
+    <div class="chevron-l col-lg-4 p-0 overflow-hidden shadow-lg"
+         style={`background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.7)), url(${OptUvaNera.src});`}>
+    </div>
+  </div>
+
+
 </MainLayout>
