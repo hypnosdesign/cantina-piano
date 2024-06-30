@@ -193,7 +193,8 @@ a {
 
 .header-cantina,
 .header-vigna,
-.header-post {
+.header-post,
+.header-vini {
   padding: 1rem 0;
   background-position: center left;
   background-repeat: no-repeat;
@@ -202,6 +203,25 @@ a {
   text-shadow: 2px 2px black;
   z-index: -1;
 }
+
+.header-vini {
+  text-shadow: 1px 1px black;
+  background-position: top right;
+  -webkit-background-size: contain;
+  background-size: contain;
+  @include media-breakpoint-down(xl) {
+    background-size: cover;
+    .sf-bianco {
+      background-color: #fff;
+    }
+  }
+  p {
+    text-shadow: 1px 1px transparent;
+
+  }
+}
+
+
 
 .header-post a {
   top:3rem;

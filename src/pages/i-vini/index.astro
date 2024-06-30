@@ -1,12 +1,98 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import ImageSlider from '../../components/ImageSlider.astro';
-import { Image } from "astro:assets";
-import bottle_nero from "../images/vino_nero_bottle_nobg.png";
+import {Image, getImage} from "astro:assets";
+import sf_package from "../../images/vini/h2-slide-con-vini.png";
+import pk_bianco from "../../images/vini/h2-slide-bianco.jpg";
+import pk_nero from "../../images/vini/h2-slide-nero.jpg";
+const optimizedBackground = await getImage({src: sf_package, format: 'webp'});
+
 const titlePage = "I Nostri Vini";
 ---
 <MainLayout title={titlePage}>
+  <header class="header-vini text-wineblack"
+          style={`background-image: linear-gradient(90deg, rgba(240,240,240,1) 0%, rgba(240,240,240,1) 40%, rgba(0,0,0,0) 45%, rgba(0,0,0,0) 100%),url(${optimizedBackground.src});`}>
+    <div class="container">
+      <div class="col-10 col-lg-6">
+        <div class="sf-bianco px-1 p-md-4 py-md-10 my-5 rounded">
+          <h1 class="display-1">{titlePage}</h1>
+          <p class="text-paragraph mb-4">
+            I vini della Cantina Piano, il fresco Vermentino e il complesso
+            Cannonau, sono espressioni autentiche della Sardegna. Ogni
+            bottiglia, avvolta in un packaging di carta semplice ed elegante,
+            racconta una storia di passione e tradizione. Lo spago che chiude
+            delicatamente l'involucro in alto aggiunge un tocco rustico e
+            raffinato, sottolineando l'attenzione ai dettagli e l'artigianalità
+            del nostro lavoro. Questi vini non sono solo da bere, ma da vivere e
+            assaporare lentamente, celebrando ogni sorso. </p>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h1 class="text-center my-5">{titlePage}</h1>
-  <ImageSlider vino="Bianco"/>
+  <section class="ilbianco bg-winegold">
+    <div class="row pb-0 pe-lg-0 align-items-center  shadow-lg">
+      <div class="col-lg-6 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">il Bianco</h1>
+        <p class="lead">Quickly design and customize responsive mobile-first
+          sites with Bootstrap, the world’s most popular front-end open source
+          toolkit, featuring Sass variables and mixins, responsive grid system,
+          extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <a href="/i-vini/il-bianco"
+           class="btn btn-secondary px-6 mt-5">Scopri</a>
+      </div>
+      <div class="col-lg-6 p-0 overflow-hidden shadow-lg">
+        <Image
+          src={pk_bianco}
+          alt="Bottiglia vino nero"
+          class="img-fluid"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="ilnero bg-winebrown text-white">
+    <div class="row pb-0 ps-lg-0 align-items-center shadow-lg">
+      <div class="col-lg-6 p-0 overflow-hidden">
+        <Image
+          src={pk_nero}
+          alt="Bottiglia vino nero"
+          class="img-fluid"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="col-lg-6 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4">il Nero</h1>
+        <p class="lead">Quickly design and customize responsive mobile-first
+          sites with Bootstrap, the world’s most popular front-end open source
+          toolkit, featuring Sass variables and mixins, responsive grid system,
+          extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <a href="/i-vini/il-nero" class="btn btn-primary px-6 mt-5">Scopri</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="px-4 py-5 my-10 my-md-16 text-center">
+      <a href="./" class="navbar-brand">
+        <img class="w-25 w-md-100 w-lg-75 w-xl-50 w-xxl-75"
+             src="./imgs/logo_black.svg" alt="Logo">
+      </a>
+      <div class="col-lg-6 mx-auto mt-3">
+        <p class="lead mb-4">
+          Ti invitiamo a vivere la vita con lentezza e consapevolezza, a
+          prendere il tempo necessario per apprezzare le piccole gioie
+          quotidiane. In un mondo che corre sempre più veloce, la Cantina Piano
+          ti propone un ritorno alla lentezza, alla degustazione attenta e
+          meditativa. Ogni bicchiere dei nostri vini è pensato per essere
+          assaporato con calma, godendo di ogni sfumatura e aroma che la nostra
+          terra ha da offrire.
+        </p>
+      </div>
+    </div>
+  </section>
 </MainLayout>
