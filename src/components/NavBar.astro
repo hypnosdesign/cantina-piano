@@ -2,7 +2,7 @@
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
-<nav class="navbar navbar-expand-md ">
+<nav class="navbar navbar-expand-md bg-wineblack text-white border-bottom border-1 border-secondary">
   <div class="container">
     <a class="navbar-brand " href="/">Cantina Piano</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -15,31 +15,31 @@ const currentPath = pathname.slice(1); // remove the first "/"
       <ul
         class="navbar-nav me-auto mb-lg-0 align-items-center justify-content-end w-100">
         <li class="nav-item">
-          <a class={currentPath === "" ? "active nav-link" : "nav-link"}
+          <a class={currentPath === "" ? "active text-wineorange nav-link" : "nav-link"}
              aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a
-            class={currentPath === "la-cantina" ? "active nav-link" : "nav-link"}
+            class={currentPath === "la-cantina" ? "active text-wineorange nav-link" : "nav-link"}
             href="/la-cantina">la Cantina</a>
         </li>
         <li class="nav-item">
           <a href="/i-vini"
-             class={currentPath === "i-vini" ? "active nav-link" : "nav-link"}>i
+             class={currentPath === "i-vini" ? "active text-wineorange nav-link" : "nav-link"}>i
             Vini</a>
         </li>
         <li class="nav-item">
           <a href="/la-vigna"
-             class={currentPath === "la-vigna" ? "active nav-link" : "nav-link"}>la
+             class={currentPath === "la-vigna" ? "active text-wineorange nav-link" : "nav-link"}>la
             Vigna</a>
         </li>
         <li class="nav-item">
           <a href="/contatti"
-             class={currentPath === "contatti" ? "active nav-link" : "nav-link"}>Contatti</a>
+             class={currentPath === "contatti" ? "active text-secondary nav-link" : "nav-link"}>Contatti</a>
         </li>
         <li class="nav-item">
           <a href="/blog"
-             class={currentPath === "blog" ? "active nav-link" : "nav-link"}>Blog</a>
+             class={currentPath === "blog" ? "active text-wineorange nav-link" : "nav-link"}>Blog</a>
         </li>
       </ul>
     </div>

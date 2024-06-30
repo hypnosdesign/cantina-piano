@@ -1,0 +1,12 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ImageSlider from '../../components/ImageSlider.astro';
+import { Image } from "astro:assets";
+import bottle_nero from "../images/vino_nero_bottle_nobg.png";
+const titlePage = "I Nostri Vini";
+---
+<MainLayout title={titlePage}>
+
+  <h1 class="text-center my-5">{titlePage}</h1>
+  <ImageSlider vino="Bianco"/>
+</MainLayout>

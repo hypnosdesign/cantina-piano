@@ -3,21 +3,61 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from "astro:assets";
 import ItaliaVect from "../components/ItaliaVect.astro";
 import BicchiereVino from "../images/bevilo-piano.png";
+import bottle_bianco from "../images/vino_bianco_bottle_nobg.png";
 import bottle_nero from "../images/vino_nero_bottle_nobg.png";
 const titlePage = "HomePage";
 
 ---
 <MainLayout title={titlePage}>
-  <section class="hero border-bottom border-wineblack border-5 py-20 bg-wineorange gradient text-white">
+  <section class="hero border-bottom border-wineblack border-5 py-10 py-md-20 bg-wineorange gradient text-white">
     <div class="container">
       <p class="h4 mx-auto">La Cantina Piano produce due vini distinti, ognuno con una personalità unica e affascinante.</p>
     </div>
   </section>
 
+  <section>
+    <div class="container position-relative">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="circle-container position-md-relative mt-10 mt-md-n12">
+            <span class="lg-circle block rounded-circle bg-wineblack position-absolute top-50 start-50 translate-middle"></span>
+            <span class="md-circle block rounded-circle bg-winebrown position-absolute d-flex justify-content-center align-items-center fs-4 text-white">Nero</span>
+            <span class="position-absolute top-50 start-50 translate-middle z-3">
+              <Image
+                src={bottle_nero}
+                alt="Bottiglia vino nero"
+                class="img-fluid"
+                decoding="async"
+                loading="lazy"
+                width="165"
+              />
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="circle-container position-md-relative mt-10 mt-md-n12">
+            <span class="lg-circle block rounded-circle bg-wineorange position-absolute top-50 start-50 translate-middle"></span>
+            <span class="md-circle block rounded-circle bg-winegold position-absolute d-flex justify-content-center align-items-center fs-4">Bianco</span>
+            <span class="position-absolute top-50 start-50 translate-middle z-3">
+              <Image
+                src={bottle_bianco}
+                alt="Bottiglia vino bianco"
+                class="img-fluid"
+                decoding="async"
+                loading="lazy"
+                width="150"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
 
-<section>
+    </div> <!-- fine container -->
+  </section>
 
-    <div class="container my-15 my-lg-20">
+
+  <section>
+    <div class="container my-15 mt-lg-20 mb-lg-15">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-12 col-md-3 ">
           <h2 class="h4">Filosofia</h2>
@@ -69,7 +109,7 @@ const titlePage = "HomePage";
 
   </section>
 
-  <div class="row p-4 pb-0 pe-lg-0 align-items-center mt-n5">
+  <section class="row p-4 pb-0 pe-lg-0 align-items-center mt-n5">
     <div class="col-md-5 p-3 p-md-5 text-center">
       <h1>Bevilo <span>piano</span></h1>
     </div>
@@ -82,7 +122,7 @@ const titlePage = "HomePage";
         loading="lazy"
       />
     </div>
-  </div>
+  </section>
 
 </MainLayout>
 

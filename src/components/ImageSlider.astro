@@ -1,19 +1,34 @@
 ---
+import { Image } from "astro:assets";
+import SfondoBianco from "../images/sf-vino-bianco.jpg";
+import SfondoNero from "../images/sf-vino-nero.jpg";
+import Bianco from "../images/cf-vino-bianco.jpg";
+import Nero from "../images/cf-vino-nero.jpg";
+
+const {vino} = Astro.props;
+const pack = vino === "Bianco" ? SfondoBianco : SfondoNero;
+const bottle = vino === "Bianco" ? Bianco : Nero;
 
 ---
 
 <div class="container-slider">
     <div class="image-container">
-        <img
-                class="image-before slider-image d-block img-fluid"
-                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                alt="color photo"
-        />
-        <img
-                class="image-after slider-image"
-                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                alt="black and white"
-        />
+
+      <Image
+        src={pack}
+        alt="Packaging Vino Bianco"
+        class="image-before slider-image d-block img-fluid"
+        decoding="async"
+        loading="lazy"
+      />
+      <Image
+        src={bottle}
+        alt="Bottiglia Vino Bianco"
+        class="image-after slider-image d-block img-fluid"
+        decoding="async"
+        loading="lazy"
+      />
+
     </div>
     <!-- step="10" -->
     <input
@@ -102,7 +117,8 @@
     .image-container {
         position: relative;
         overflow: hidden;
-        aspect-ratio: 1/1;
+        //aspect-ratio: 1/1;
+      //width: 100%;
     }
 
 
@@ -117,7 +133,7 @@
         position: absolute;
         inset: 0;
         width: var(--position);
-        filter: grayscale(100%)
+        //filter: grayscale(100%)
     }
 
 

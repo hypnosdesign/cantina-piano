@@ -1,16 +1,94 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { Image } from "astro:assets";
-import bottle_nero from "../images/vino_nero_bottle_nobg.png";
-const titlePage = "La Nostra Cantina";
+
+import { getImage, Image } from "astro:assets";
+import headerBackground from "../images/cantina_vini.jpg";
+import Botti from "../images/botti.jpg";
+import Imbottigliamento from "../images/cantina/imbottigliamento.jpeg";
+import Stoccaggio from "../images/cantina/stoccaggio.jpeg";
+
+const optimizedBackground = await getImage({src: headerBackground, format: 'webp'});
+const optimizedImbottigliamento = await getImage({src: Imbottigliamento, format: 'webp'});
+const optimizedStoccaggio= await getImage({src: Stoccaggio, format: 'webp'});
+
+const titlePage = "la Nostra Cantina";
 ---
 <MainLayout title={titlePage}>
-    <h1>{titlePage}</h1>
-    <Image
-            src={bottle_nero}
-            alt="Bottiglia di vino nero"
-            class="w-25 img-fluid"
+  <header class="header-cantina text-white" style={`background-image: url(${optimizedBackground.src});`}>
+    <div class="container">
+      <div class="col-10 col-lg-6">
+        <div class="px-1 p-md-4 py-md-10 my-5">
+          <h1 class="display-1">{titlePage}</h1>
+            <p class="text-paragraph mb-4">
+              La nostra cantina non vende i propri vini direttamente online, ma si propone come una vetrina per far conoscere questi prodotti unici. Ogni bottiglia racchiude in sé la nostra filosofia: il vino è un momento di condivisione, di piacere, di vita vissuta con lentezza e intensità.
+            </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="my-20 py-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-9 mx-auto">
+              <p class="text-paragraph fs-5">
+                La
+                <em class="h4 text-wineblack fw-semibold px-2">Cantina Piano </em> è un luogo di passione e di ricerca, dove il vino è il protagonista assoluto. Ogni bottiglia è il risultato di un lungo percorso, che parte dalla vigna e arriva fino al bicchiere. Ogni vino racconta una storia, un territorio, una tradizione.
+              </p>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="py-10">
+    <div class="container">
+      <div class="row gx-12 align-items-center">
+        <div class="col-12 col-md-6 order-md-2">
+          <Image
+            src={Botti}
+            alt="Botti in cantina"
+            class="img-fluid rounded shadow-lg"
             decoding="async"
             loading="lazy"
-    />
+          />
+        </div>
+        <div class="col-12 col-lg-6 order-md-1">
+          <h2 class="display-2">le Botti</h2>
+          <p class="text-paragraph">Nella
+            <em class="h5 text-wineblack fw-semibold">Cantina Piano </em>, le botti rappresentano un elemento fondamentale del nostro processo produttivo, incarnando la tradizione e la maestria artigianale della vinificazione sarda. Le nostre botti sono realizzate con legno di rovere di alta qualità, selezionato con cura per le sue caratteristiche uniche. Il rovere conferisce al vino aromi complessi e sfumature aromatiche che arricchiscono il bouquet finale. Le botti, disposte ordinatamente nella nostra cantina sotterranea, creano un ambiente ideale per l'affinamento del vino, dove temperatura e umidità sono costantemente monitorate per garantire condizioni ottimali.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="imbottigliamento my-20" style={`background-image: url(${optimizedImbottigliamento.src});`}>
+    <div class="container">
+      <div class="row my-10 gx-8 align-items-center" >
+        <div class="col-12 col-md-6 offset-md-6 bg-white my-10 p-5 rounded shadow">
+          <h2 class="display-2">l'Imbottigliamento</h2>
+          <p class="text-paragraph">L'imbottigliamento è uno dei momenti più importanti del processo produttivo del vino. Nella
+            <em class="h5 text-wineblack fw-semibold">Cantina Piano </em>, questo momento è vissuto con grande attenzione e cura, per garantire la massima qualità e integrità del prodotto finale. Ogni bottiglia è riempita con cura e precisione, per preservare al meglio le caratteristiche organolettiche del vino. L'imbottigliamento è un momento di grande emozione, in cui il vino prende forma e si prepara a raggiungere il palato degli intenditori.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=" position-relative" >
+    <div class="skew-background stoccaggio" style={`background-image: url(${optimizedStoccaggio.src});`}></div>
+    <div class="container">
+      <div class="row align-items-center" >
+        <div class="col-12 col-md-8 mx-auto bg-white my-10 p-5 rounded shadow">
+          <h2 class="display-2">lo Stoccaggio</h2>
+          <p class="text-paragraph">Lo stoccaggio delle bottiglie nella <em class="h5 text-wineblack fw-semibold">Cantina Piano </em> è un processo meticoloso e fondamentale per assicurare la massima qualità dei nostri vini. Dopo l'imbottigliamento e una breve fase di affinamento, le bottiglie vengono trasferite nel nostro magazzino di stoccaggio, un ambiente progettato con cura per preservare le caratteristiche organolettiche del vino.</p>
+          <p class="text-paragraph">
+            Le bottiglie sono conservate in apposite rastrelliere, disposte orizzontalmente per garantire che il vino rimanga in contatto con il tappo di sughero. Questo contatto è essenziale per mantenere il tappo umido ed evitare che si asciughi, il che potrebbe permettere l'ingresso di ossigeno nella bottiglia e causare ossidazione. Le rastrelliere sono costruite in legno massiccio, un materiale scelto non solo per la sua robustezza ma anche per le sue proprietà naturali di assorbimento delle vibrazioni, che potrebbero disturbare il vino durante il suo affinamento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </MainLayout>

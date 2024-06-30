@@ -31,6 +31,9 @@ $h6-font-size:                $font-size-base;
 $enable-negative-margins: true;
 $enable-shadows: true;
 
+$primary:                   #8f1a37;
+$secondary:                 #ebaa24;
+
 :root {
   --wineblack: #8f1a37;
 }
@@ -77,7 +80,9 @@ $spacers: map-merge($spacers, $spacers-extends);
 // import boostrap icons
 @import "bootstrap-icons/font/bootstrap-icons.min.css";
 
-
+// Custom Variables
+$lg-circle: 315px;
+$md-circle: 265px;
 
 @mixin full-width($px: 10) {
   margin-inline: -200%;
@@ -108,9 +113,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50svh;
-  //@include full-width(10);
-
+  @include media-breakpoint-up(md) {
+    min-height: 40vh;
+  }
 
   // Typography
   text-align: center;
@@ -142,6 +147,69 @@ body {
 
 a {
   cursor: pointer;
+}
+
+.circle-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.lg-circle {
+  width: $lg-circle;
+  height: $lg-circle;
+  font-family: $font-family-cursive;
+  border-radius: 50%;
+  background: var(--wineblack);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.md-circle {
+  width: $md-circle;
+  height: $md-circle;
+  font-family: $font-family-cursive;
+  border-radius: 50%;
+  background: var(--wineblack);
+  position: absolute;
+  bottom: -40%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.skew-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 0 40%);
+  z-index: -1;
+}
+
+.header-cantina {
+  padding: 1rem 0;
+  background-position: center left;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.imbottigliamento,
+.stoccaggio{
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.skew-background.stoccaggio {
+  clip-path: polygon(50% 30%, 100% 50%, 100% 100%, 0 100%, 0% 50%);
+
 }
 
 
