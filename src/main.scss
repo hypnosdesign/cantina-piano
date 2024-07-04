@@ -309,6 +309,7 @@ a {
   -webkit-background-size: cover;
   background-size: cover;
 }
+
 .chevron-l {
   height: 100%;
   min-height: 500px;
@@ -319,6 +320,14 @@ a {
   height: 100%;
   min-height: 500px;
   clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.chevron-l,
+.chevron-r {
+  @include media-breakpoint-down(md) {
+    min-height: 380px;
+    clip-path: none;
+  }
 }
 
 .word {
