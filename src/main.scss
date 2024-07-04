@@ -9,7 +9,7 @@ $stick: 'Stick No Bills Variable', sans-serif;
 
 $font-family-serif: 'Source Serif pro', serif;
 $font-family-monospace: 'Courier New, monospace';
-$font-family-cursive: 'Cookie', cursive;
+$font-family-cursive: $stick;
 
 // Override the base font-family
 $font-family-base: $font-family-serif;
@@ -36,7 +36,19 @@ $enable-negative-margins: true;
 $enable-shadows: true;
 
 $primary:                   #8f1a37;
-$secondary:                 #ebaa24;
+$secondary:                 rgb(235 170 36 / 1);
+
+$navbar-light-icon-color:           rgba($body-color, .75);
+$navbar-dark-color:                 rgba($body-bg, .55);
+$navbar-dark-hover-color:           rgba($body-bg, 1);
+$navbar-dark-active-color:          rgba($body-bg, 1);
+$navbar-light-hover-color:           rgba($body-bg, 1);
+$navbar-light-active-color:          rgba($body-bg, 1);
+$navbar-dark-icon-color:            $navbar-dark-color;
+$navbar-light-toggler-icon-bg:      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{$navbar-dark-icon-color}" class="bi bi-three-dots-vertical" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/></svg>');
+$navbar-light-toggler-icon-bg-dark: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/></svg>');
+
+$navbar-light-toggler-icon-bg:      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{$navbar-dark-icon-color}" class="bi bi-three-dots-vertical" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/></svg>');
 
 :root {
   --wineblack: #8f1a37;
@@ -78,6 +90,7 @@ $spacers-extends: (
 $theme-colors: map-merge($theme-colors, $wine-colors);
 $spacers: map-merge($spacers, $spacers-extends);
 
+$navbar-light-color:                $body-bg;
 
 
 @import "bootstrap/scss/bootstrap";
@@ -88,14 +101,55 @@ $spacers: map-merge($spacers, $spacers-extends);
 $lg-circle: 315px;
 $md-circle: 265px;
 
+
+
+
+
 @mixin full-width($px: 10) {
   margin-inline: -200%;
   padding-inline: calc(#{$px}px + 200%);
 }
 
-body {
-  overflow-x: hidden;
-  width: 100lvw;
+
+.nav-item {
+  position: relative;
+  font-family: 'Stick No Bills Variable', sans-serif;
+  font-size: 1.25rem;
+  margin-inline: .3em;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 4px;
+
+  letter-spacing: 2px;
+}
+
+.nav-link span {
+  color: rgb(255 255 255 / 50%);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.nav-link.active span {
+  color: rgb(235 170 36 / 50%);
+}
+
+
+.nav-link.active::before {
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  display: block;
+  width: 0;
+  height: 4px;
+  background-color: currentColor;
+  transition: width .3s;
+  @include media-breakpoint-up(md) {
+    width: 100%;
+  }
 }
 
 .text-paragraph {
@@ -104,25 +158,26 @@ body {
   letter-spacing: -0.033em;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
-  &__container {
+  /*&__container {
     max-width: 680px;
     margin: 1em auto;
-  }
+  }*/
 }
 
 .hero {
   // Positioning
 
   // Box model
-  display: flex;
+ /* display: flex;
   justify-content: center;
   align-items: center;
   @include media-breakpoint-up(md) {
     min-height: 40vh;
-  }
+  }*/
 
   // Typography
-  text-align: center;
+  /*text-align: center;
+  font-weight: 100;*/
   //word-break: keep-all;
 
   // Visual
@@ -131,10 +186,10 @@ body {
   color: var(--white);
 
   // Misc
-  p {
+ /* p {
     max-width: 680px;
     width: 100%;
-  }
+  }*/
 }
 
 .dropcap {
@@ -142,7 +197,7 @@ body {
   padding-top: 4px;
   padding-right: 8px;
   padding-left: 3px;
-  font-family: $font-family-cursive;
+  font-family: $stick;
   font-size: 6rem;
   line-height: 4rem;
   color: var(--wineblack);
@@ -163,6 +218,7 @@ a {
   width: $lg-circle;
   height: $lg-circle;
   font-family: $font-family-cursive;
+
   border-radius: 50%;
   background: var(--wineblack);
   position: absolute;
@@ -176,6 +232,7 @@ a {
   width: $md-circle;
   height: $md-circle;
   font-family: $font-family-cursive;
+  font-weight: 900;
   border-radius: 50%;
   background: var(--wineblack);
   position: absolute;
@@ -264,4 +321,7 @@ a {
   clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 }
 
+.word {
+  word-break: break-all;
+}
 

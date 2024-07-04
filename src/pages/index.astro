@@ -9,17 +9,19 @@ const titlePage = "HomePage";
 
 ---
 <MainLayout title={titlePage}>
-  <section class="hero border-bottom border-wineblack border-5 py-10 py-md-20 bg-wineorange gradient text-white">
-    <div class="container">
-      <p class="h4 mx-auto">La Cantina Piano produce due vini distinti, ognuno con una personalità unica e affascinante.</p>
+  <section class="hero">
+    <div class="container py-5 py-md-15 text-white text-center">
+      <p class="h5">La Cantina Piano produce due vini distinti,</p>
+      <p class="h5">ognuno con una personalità unica e affascinante.</p>
     </div>
   </section>
 
-  <section>
+
+  <section class="">
     <div class="container position-relative">
       <div class="row">
         <div class="col-12 col-md-6">
-          <div class="circle-container position-md-relative mt-10 mt-md-n12">
+          <div class="circle-container position-md-relative mt-20 mt-md-0">
             <span class="lg-circle block rounded-circle bg-wineblack position-absolute top-50 start-50 translate-middle"></span>
             <span class="md-circle block rounded-circle bg-winebrown position-absolute d-flex justify-content-center align-items-center fs-4 text-white">Nero</span>
             <span class="position-absolute top-50 start-50 translate-middle z-3">
@@ -35,9 +37,9 @@ const titlePage = "HomePage";
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <div class="circle-container position-md-relative mt-10 mt-md-n12">
+          <div class="circle-container position-md-relative mt-20 mt-md-0">
             <span class="lg-circle block rounded-circle bg-wineorange position-absolute top-50 start-50 translate-middle"></span>
-            <span class="md-circle block rounded-circle bg-winegold position-absolute d-flex justify-content-center align-items-center fs-4">Bianco</span>
+            <span class="md-circle block rounded-circle bg-winegold position-absolute d-flex justify-content-center align-items-center fs-4 ms-0 ms-md-n3 ms-lg-0">Bianco</span>
             <span class="position-absolute top-50 start-50 translate-middle z-3">
               <Image
                 src={bottle_bianco}
@@ -56,17 +58,17 @@ const titlePage = "HomePage";
   </section>
 
 
-  <section>
-    <div class="container my-15 mt-lg-20 mb-lg-15">
-      <div class="row d-flex justify-content-center align-items-center">
+  <section class="mt-20 mt-md-15">
+    <div class="container">
+      <div class="row align-items-md-center">
         <div class="col-12 col-md-3 ">
-          <h2 class="h4">Filosofia</h2>
+          <h2 class="h4 mb-4 mb-md-0 fw-semibold">Filosofia</h2>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col col-12 col-md-6">
           <p class="text-paragraph">
             Fin dai primi anni, la nostra missione è stata chiara: creare vini che raccontano una storia, che esprimono il carattere autentico del territorio e che invitano a vivere la vita in modo rilassato e conviviale. Il nome stesso della nostra cantina, "Piano", riflette questa filosofia. Vogliamo che i nostri vini siano degustati con calma, in buona compagnia, assaporando ogni momento.
           </p>
-          <a class="btn" href="la-cantina">scopri la cantina</a>
+          <a class="btn btn-outline-primary btn-md mt-3" href="la-cantina">scopri la cantina</a>
         </div>
         <div class="col-12 col-md-3 text-center">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,38 +82,39 @@ const titlePage = "HomePage";
     </div>
 
     <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <picture class="w-25">
+      <div class="row justify-content-center">
+        <picture style="max-width: 500px">
           <ItaliaVect/>
         </picture>
       </div>
     </div>
 
     <div class="container">
-      <div class="row my-5 justify-content-center align-items-center">
-        <div class="col-12 col-md-3 ">
+      <div class="row align-items-md-center">
+        <div class="col-12 col-md-3 order-3 order-md-1 text-center">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="10" cy="10" r="10" fill="#8F1A37"/>
           </svg>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="10" cy="10" r="10" fill="#B79B54"/></svg>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 order-2">
           <p class="text-paragraph">
             Immersa nella splendida cornice della Sardegna, la Cantina Piano nasce dalla passione per la viticoltura e dall'amore per la nostra terra. Fondata da una famiglia sarda con una lunga tradizione vinicola, la cantina rappresenta un connubio perfetto tra innovazione e rispetto per le antiche tradizioni.          </p>
-          <a class="btn btn-wine rounded" href="la-vigna">scopri la vigna</a>
+          <a class="btn btn-outline-primary btn-md mt-3" href="la-vigna">scopri la vigna</a>
+
         </div>
-        <div class="col-12 col-md-3 text-center">
-          <h2 class="h4">Territorio</h2>
+        <div class="col-12 col-md-3 order-1 order-md-3">
+          <h2 class="h4 mb-4 mb-md-0 fw-semibold">Territorio</h2>
         </div>
       </div>
     </div>
 
   </section>
 
-  <section class="row p-4 pb-0 pe-lg-0 align-items-center mt-n5">
-    <div class="col-md-5 p-3 p-md-5 text-center">
-      <h1>Bevilo <span>piano</span></h1>
+  <section class="row p-4 pb-0 pe-lg-0 align-items-center">
+    <div class="col-lg-5 p-3 p-md-5 text-center">
+      <h1 class="mt-5 mb-n15">Bevilo <span>piano</span></h1>
     </div>
     <div class="col-lg-6 offset-lg-1 p-0 overflow-hidden">
       <Image
