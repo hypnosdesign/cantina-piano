@@ -20,13 +20,13 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout>
-  <div class="container" >
-    <div class="row header-post py-16 text-center position-relative" style={`background-image: url(/imgs/forblog/${entry.data.image});`}>
-      <div class="">
+  <div class="container position-relative" >
+    <a href="/blog" class="d-block position-absolute link-secondary fs-6 py-2 px-4 left-0 ms-n3 ms-sm-n5 bg-wineblack">
+      <i class="bi bi-arrow-left"></i>
+      Torna agli articoli</a>
+    <div class="row header-post py-16 text-center" style={`background-image: url(/imgs/forblog/${entry.data.image});`}>
+      <div>
         <h1 class="my-4 text-white"> {entry.data.title}</h1>
-        <a href="/blog" class="d-block position-absolute link-secondary fs-6">
-          <i class="bi bi-arrow-left"></i>
-          Torna agli articoli</a>
       </div>
 
     </div>
@@ -35,9 +35,12 @@ const { Content } = await entry.render();
       <div class="col-11 mx-auto col-lg-7 bg-white px-8 py-4">
         <article>
           <hr>
-          <h3 class="fs-5">Written by {entry.data.author} on {formatDate(entry.data.pubDate)}</h3>
+          <p class="fs-6"><span class="text-winebrown fw-bold">Scritto da</span> {entry.data.author} <span class="text-winebrown fw-bold">il</span> {formatDate(entry.data.pubDate)}</p>
           <hr class="mb-5">
-          <Content />
+          <div class="text-paragraph">
+            <Content />
+          </div>
+
         </article>
       </div>
     </div>
