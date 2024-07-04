@@ -1,50 +1,53 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import ImageSlider from '../../components/ImageSlider.astro';
 import {Image, getImage} from "astro:assets";
-import sf_package from "../../images/vini/h2-slide-con-vini.png";
-import pk_bianco from "../../images/vini/h2-slide-bianco.jpg";
-import pk_nero from "../../images/vini/h2-slide-nero.jpg";
+import sf_package from "../../images/vini/sfondo_vini_pck.jpg";
+import pk_bianco from "../../images/vini/vino_bianco_pck.jpg";
+import pk_nero from "../../images/vini/vino_nero_pck.jpg";
 const optimizedBackground = await getImage({src: sf_package, format: 'webp'});
 
 const titlePage = "I Nostri Vini";
 ---
 <MainLayout title={titlePage}>
-  <header class="header-vini text-wineblack"
-          style={`background-image: linear-gradient(90deg, rgba(240,240,240,1) 0%, rgba(240,240,240,1) 40%, rgba(0,0,0,0) 45%, rgba(0,0,0,0) 100%),url(${optimizedBackground.src});`}>
+  <div class="container-fluid rounded-4 overflow-hidden" style="max-width: 1440px">
+    <Image
+      class="img-fluid"
+      src={sf_package}
+      alt="sfondo vini"
+      decoding="async"
+      loading="lazy" />
+  </div>
+
+
+  <header>
     <div class="container">
-      <div class="col-11 col-lg-7 mx-auto mx-lg-0">
-        <div class="sf-bianco p-3 p-md-5 py-lg-10 rounded">
-          <h1 class="display-1">{titlePage}</h1>
+      <div class="col-11 mx-auto my-10">
+          <h1 class="display-1 fw-bold">{titlePage}</h1>
           <p class="text-paragraph mb-4">
-            I vini della Cantina Piano, il fresco Vermentino e il complesso
-            Cannonau, sono espressioni autentiche della Sardegna. Ogni
-            bottiglia, avvolta in un packaging di carta semplice ed elegante,
-            racconta una storia di passione e tradizione. Lo spago che chiude
-            delicatamente l'involucro in alto aggiunge un tocco rustico e
-            raffinato, sottolineando l'attenzione ai dettagli e l'artigianalità
-            del nostro lavoro. Questi vini non sono solo da bere, ma da vivere e
-            assaporare lentamente, celebrando ogni sorso. </p>
-        </div>
+          I vini della Cantina Piano, il fresco Vermentino e il complesso
+          Cannonau, sono espressioni autentiche della Sardegna. Ogni
+          bottiglia, avvolta in un packaging di carta semplice ed elegante,
+          racconta una storia di passione e tradizione. Lo spago che chiude
+          delicatamente l'involucro in alto aggiunge un tocco rustico e
+          raffinato, sottolineando l'attenzione ai dettagli e l'artigianalità
+          del nostro lavoro. Questi vini non sono solo da bere, ma da vivere e
+          assaporare lentamente, celebrando ogni sorso. </p>
       </div>
     </div>
   </header>
 
-  <section class="">
+  <section class="container-xxl">
     <div class="row">
       <div class="col-12 py-3 px-5 col-md-6 bg-winegold">
         <h1 class="display-4">il Bianco</h1>
-        <p class="text-paragraph">Quickly design and customize responsive mobile-first
-          sites with Bootstrap, the world’s most popular front-end open source
-          toolkit, featuring Sass variables and mixins, responsive grid system,
-          extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <p class="text-paragraph">Il nostro vino bianco è una vera e propria ode ai profumi e ai sapori della Sardegna. Fresco e aromatico, si caratterizza per le sue note di frutta tropicale e agrumi, accompagnate da un delicato sentore di fiori bianchi. È un vino che invita alla calma e alla riflessione, perfetto per essere gustato lentamente, assaporando ogni sorso. La sua complessità e finezza lo rendono ideale per accompagnare piatti di pesce e formaggi freschi, esaltando al meglio la cucina mediterranea.</p>
         <a href="/i-vini/il-bianco"
            class="btn btn-secondary px-6 mt-5">Scopri</a>
       </div>
       <div class="col-12 col-md-6 p-0 m-0 overflow-hidden">
         <Image
           src={pk_bianco}
-          alt="Bottiglia vino nero"
+          alt="Bottiglia vino Bianco"
           class="img-fluid object-fit-cover h-100"
           decoding="async"
           loading="lazy"
@@ -53,22 +56,19 @@ const titlePage = "I Nostri Vini";
     </div>
 
     <div class="row">
-      <div class="col-12 col-md-6 p-0 m-0 overflow-hidden">
+      <div class="col-12 col-md-6 p-0 m-0 overflow-hidden order-2 order-md-1">
         <Image
           src={pk_nero}
-          alt="Bottiglia vino nero"
+          alt="Bottiglia vino Nero"
           class="img-fluid object-fit-cover h-100"
           decoding="async"
           loading="lazy"
         />
       </div>
 
-      <div class="col-12 py-3 px-5 col-md-6 bg-winebrown text-white">
+      <div class="col-12 py-3 px-5 col-md-6 bg-winebrown text-white order-1 order-md-2">
         <h1 class="display-4">il Nero</h1>
-        <p class="text-paragraph">Quickly design and customize responsive mobile-first
-          sites with Bootstrap, the world’s most popular front-end open source
-          toolkit, featuring Sass variables and mixins, responsive grid system,
-          extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <p class="text-paragraph">Il vino nero, invece, è un'esperienza sensoriale intensa e avvolgente. Di colore rosso rubino profondo, offre al palato un bouquet ricco di frutti di bosco, spezie e un tocco di vaniglia. La sua struttura robusta e i tannini morbidi lo rendono un compagno perfetto per piatti di carne e formaggi stagionati. Ogni sorso è un viaggio nel cuore della Sardegna, un'occasione per scoprire la profondità e la ricchezza di questa terra antica.</p>
         <a href="/i-vini/il-nero" class="btn btn-primary px-6 mt-5">Scopri</a>
       </div>
     </div>

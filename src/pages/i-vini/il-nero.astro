@@ -2,11 +2,64 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import ImageSlider from '../../components/ImageSlider.astro';
 import { Image } from "astro:assets";
-import bottle_nero from "../images/vino_nero_bottle_nobg.png";
-const titlePage = "I Nostro Bianco";
+import bottle_nero from "../../images/vini/vino_nero_pck.jpg";
+import pk_nero from "../../images/vini/vino_nero_pck.jpg";
+const titlePage = "I Nostro NERO";
 ---
 <MainLayout title={titlePage}>
+  <h1 class="display-1 fw-bold text-center my-5">{titlePage}</h1>
+  <div class="d-none d-lg-block">
+    <ImageSlider vino="Nero" />
+  </div>
 
-  <h1 class="text-center my-5">{titlePage}</h1>
-  <ImageSlider vino="Nero"/>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6 d-lg-none d-flex justify-content-center">
+        <Image src={bottle_nero} alt="Vino Nero" class="img-fluid" />
+      </div>
+      <div class="col-12 col-lg-6 mx-auto mt-lg-5">
+        <p class="text-paragraph">
+          Il NERO della Cantina Piano è un vino rosso robusto e avvolgente, simbolo della tradizione vitivinicola sarda. Prodotto con uve Cannonau coltivate nei terreni minerali e ben drenati della Sardegna, questo vino si presenta con un colore rosso rubino intenso e profondo. Al naso, il Cannonau offre un bouquet complesso e affascinante, con note di frutti di bosco maturi, ciliegia, spezie dolci come la cannella e un tocco di vaniglia derivato dall'affinamento in botti di rovere. Al palato, il vino è corposo e strutturato, con tannini morbidi e una persistenza che lascia una sensazione di calore e armonia.
+          Il NERO è il compagno perfetto per piatti di carne, selvaggina e formaggi stagionati. Si abbina magnificamente al maialetto arrosto, piatto tipico della tradizione sarda, e a piatti di cinghiale o agnello. La sua complessità e la sua profondità lo rendono anche ideale per essere degustato da solo, come vino da meditazione, per apprezzare appieno tutte le sue sfumature aromatiche. Ogni bicchiere di Cannonau della Cantina Piano è un viaggio nei sapori autentici della Sardegna, un'esperienza che celebra la ricchezza e la storia di questa terra antica.
+        </p>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-11 mx-auto text-center my-5 col-md-8 col-lg-4">
+      <img src="/imgs/logo-cantina-piano-color.svg">
+    </div>
+  </div>
+</div>
+
+  <section class="container-xxl">
+    <div class="row">
+      <div class="col-12 py-6 px-5 col-md-6 bg-winebrown text-white">
+        <h1 class="display-4">da bere con..</h1>
+        <p class="text-paragraph">
+          Il NERO della Cantina Piano, con la sua robustezza e complessità, è il compagno ideale per una varietà di piatti ricchi e saporiti. Si abbina magnificamente a carni rosse come il maialetto arrosto, tipico della tradizione sarda, esaltandone i sapori intensi con i suoi tannini morbidi e le sue note speziate. È perfetto anche con piatti di selvaggina, come il cinghiale in umido, dove la struttura del vino bilancia la ricchezza della carne. Formaggi stagionati come il pecorino sardo trovano nel Cannonau un partner eccellente, capace di esaltare le note piccanti e sapide del formaggio. Infine, questo vino è ideale anche per accompagnare piatti speziati e aromatizzati, come stufati e arrosti, creando un'esperienza enogastronomica che celebra la tradizione culinaria della Sardegna.        </p>
+      </div>
+      <div class="col-12 col-md-6 p-0 m-0 overflow-hidden">
+        <img src="/imgs/ba-bere-nero.webp" class="object-fit-cover">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 p-0 m-0 overflow-hidden order-2 order-md-1">
+        <Image
+          src={pk_nero}
+          alt="Bottiglia vino Nero"
+          class="img-fluid object-fit-cover h-100"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="col-12 py-3 px-5 py-6 col-md-6 align-self-center order-1 order-md-2">
+        <h1 class="display-4">il Packaging</h1>
+<p class="text-paragraph">Il packaging della Cantina Piano è un omaggio alla semplicità e alla naturalezza, riflettendo l'autenticità e la cura che caratterizzano i nostri vini. Ogni bottiglia è avvolta in una carta naturale, che non solo protegge il vino dalla luce ma anche aggiunge un tocco rustico ed elegante. La carta, di una tonalità neutra e piacevole al tatto, avvolge la bottiglia come una busta, coprendo interamente il vetro. La chiusura è affidata a uno spago naturale, legato con cura in alto, che conferisce un ulteriore elemento di artigianalità e autenticità. Questo packaging non solo rispetta l'ambiente, ma trasmette anche un senso di tradizione e attenzione ai dettagli, rendendo ogni bottiglia della Cantina Piano un regalo perfetto per gli amanti del vino.</p>      </div>
+    </div>
+  </section>
+
 </MainLayout>

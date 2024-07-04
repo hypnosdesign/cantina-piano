@@ -2,11 +2,65 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import ImageSlider from '../../components/ImageSlider.astro';
 import { Image } from "astro:assets";
-import bottle_nero from "../images/vino_nero_bottle_nobg.png";
-const titlePage = "I Nostro Bianco";
+import bottle_bianco from "../../images/vini/vino_bianco_pck.jpg";
+import pk_bianco from "../../images/vini/vino_bianco_pck.jpg";
+const titlePage = "I Nostro BIANCO";
 ---
 <MainLayout title={titlePage}>
+  <h1 class="display-1 fw-bold text-center my-5">{titlePage}</h1>
+  <div class="d-none d-lg-block">
+    <ImageSlider vino="Bianco" />
+  </div>
 
-  <h1 class="text-center my-5">{titlePage}</h1>
-  <ImageSlider vino="Bianco"/>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6 d-lg-none d-flex justify-content-center">
+        <Image src={bottle_bianco} alt="Vino Nero" class="img-fluid" />
+      </div>
+      <div class="col-12 col-lg-6 mx-auto mt-lg-5">
+        <p class="text-paragraph">
+          Il BIANCO della Cantina Piano è un vino bianco che incarna la freschezza e la vitalità del territorio sardo. Prodotto da uve Vermentino coltivate con cura nelle soleggiate colline della Sardegna, questo vino si distingue per il suo colore giallo paglierino con riflessi verdolini. Al naso, offre un bouquet aromatico ricco e complesso, con note di agrumi, mela verde, fiori bianchi e un leggero sentore di erbe mediterranee. Al palato, il Vermentino è fresco e vibrante, con un'acidità ben bilanciata che conferisce una piacevole sensazione di vivacità e una persistenza sapida che richiama il mare vicino.
+
+          Questo vino bianco è estremamente versatile e si presta ad abbinamenti con una vasta gamma di piatti. È ideale per accompagnare antipasti leggeri, piatti di pesce, frutti di mare e insalate fresche. La sua freschezza lo rende perfetto anche come aperitivo, da gustare in buona compagnia nelle calde serate estive. Ogni sorso di Vermentino della Cantina Piano è un invito a scoprire i sapori autentici della Sardegna, un'esperienza che celebra la natura incontaminata e la tradizione vinicola dell'isola.        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-11 mx-auto text-center my-5 col-md-8 col-lg-4">
+        <img src="/imgs/logo-cantina-piano-color.svg">
+      </div>
+    </div>
+  </div>
+
+  <section class="container-xxl">
+    <div class="row">
+      <div class="col-12 py-6 px-5 col-md-6 bg-winegold">
+        <h1 class="display-4">da bere con..</h1>
+        <p class="text-paragraph">
+          Il BIANCO della Cantina Piano è un vino bianco fresco e aromatico, perfetto per esaltare i sapori dei piatti leggeri e delicati. Questo vino si abbina magnificamente a piatti di pesce come il branzino al forno e i frutti di mare, dove la sua acidità bilancia la dolcezza naturale del pesce e aggiunge una nota di freschezza. È ideale anche con antipasti di mare, come carpacci di pesce e tartare di tonno, dove le sue note agrumate e floreali esaltano i sapori delicati del pesce crudo. Il Vermentino si sposa bene anche con primi piatti leggeri, come la pasta con vongole o risotti ai frutti di mare, dove la sua mineralità completa la sapidità del piatto. Infine, questo vino bianco è eccellente con formaggi freschi e insalate estive, creando un'esperienza gustativa che celebra la freschezza e la leggerezza della cucina mediterranea.
+        </p>
+      </div>
+      <div class="col-12 col-md-6 p-0 m-0 overflow-hidden">
+        <img src="/imgs/da-bere-bianco.webp" class="object-fit-cover">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 p-0 m-0 overflow-hidden order-2 order-md-1">
+        <Image
+          src={pk_bianco}
+          alt="Bottiglia vino Bianco"
+          class="img-fluid object-fit-cover h-100"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="col-12 py-3 px-5 py-6 col-md-6 align-self-center order-1 order-md-2">
+        <h1 class="display-4">il Packaging</h1>
+        <p class="text-paragraph">Il packaging della Cantina Piano è un omaggio alla semplicità e alla naturalezza, riflettendo l'autenticità e la cura che caratterizzano i nostri vini. Ogni bottiglia è avvolta in una carta naturale, che non solo protegge il vino dalla luce ma anche aggiunge un tocco rustico ed elegante. La carta, di una tonalità neutra e piacevole al tatto, avvolge la bottiglia come una busta, coprendo interamente il vetro. La chiusura è affidata a uno spago naturale, legato con cura in alto, che conferisce un ulteriore elemento di artigianalità e autenticità. Questo packaging non solo rispetta l'ambiente, ma trasmette anche un senso di tradizione e attenzione ai dettagli, rendendo ogni bottiglia della Cantina Piano un regalo perfetto per gli amanti del vino.</p>      </div>
+    </div>
+  </section>
+
 </MainLayout>
