@@ -9,20 +9,18 @@ const titlePage = "Blog di un sommelier";
 
 ---
 <MainLayout title={titlePage}>
-    <h1 class="text-center my-5">{titlePage}</h1>
+
+  <div class="container">
+    <h1 class="text-center my-5 display-3 fw-bold">{titlePage}</h1>
+  </div>
   <div class="container my-16">
-    <div class="row g-6">
-
-
-        {allBlogPosts.map((post) => (
-          <div class="col-10 mx-auto col-md-6 col-lg-4 justify-content-center">
-            <PostEl article={post} />
-          </div>
-        ))}
-
-
+    <div class="row g-0 gy-5 g-md-6">
+    {allBlogPosts.map((post) => (
+      <div class="col-10 mx-auto col-md-6 col-lg-4 justify-content-center">
+        <PostEl article={post} />
+      </div>
+    ))}
     </div>
   </div>
-
 
 </MainLayout>
