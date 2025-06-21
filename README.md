@@ -18,9 +18,9 @@ All'interno del progetto sono presenti le seguenti cartelle e file:
 Astro cerca i file `.astro` o `.md` nella cartella `src/pages/`. Ogni pagina è esposta come rotta in base al nome del file.
 
 Nella cartella `src/components/`,
- è vengono alloggiati i componenti di Astro/React/Vue/Svelte/Preact.
+vengono alloggiati i componenti di Astro.
 Qualsiasi risorsa statica, come le immagini,
-può essere collocata nella cartella `public/`.
+è collocata nella cartella `public/`.
 
 ## 🧞 Commandi
 
